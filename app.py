@@ -12,13 +12,13 @@ load_dotenv()
 
 aws_access_key_id = os.getenv("aws_access_key_ID")
 aws_secret_access_key = os.getenv("aws_secret_access_key")
-region_name = os.getenv("region_name")
+AWS_DEFAULT_REGION = os.getenv("AWS_DEFAULT_REGION")
 
 
 #Bedrock client
 bedrock = boto3.client(
     service_name = "bedrock-runtime", 
-    region_name = region_name,
+    region_name = AWS_DEFAULT_REGION,
     aws_access_key_id = aws_access_key_id,
     aws_secret_access_key = aws_secret_access_key,
     )
